@@ -25,7 +25,7 @@ export function Hero() {
 
             <Image
 
-                src="/images/hero.png"
+                src="/expo-feria-cultural/images/hero.png"
                 alt="Expo Feria Cultural Andrade Marín"
                 fill
                 priority

@@ -83,7 +83,7 @@ export default function About() {
 
                             <Image
 
-                                src="/images/about.png"
+                                src="/expo-feria-cultural/images/about.png"
 
                                 alt="Expo Feria Cultural"
 
