@@ -1,21 +1,17 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 
-import Image from "next/image";
-
 import { SectionTitle } from "@/components/ui/SectionTitle/SectionTitle";
-
-import { Button } from "@/components/ui/Button/Button";
-
-import AboutCard from "./AboutCard";
-import { aboutFeatures } from "@/constants/about";
+import { SectionDivider } from "@/components/ui/SectionDivider";
+import { aboutFeatures, aboutStats } from "@/constants/about.constants";
+import { StatItem } from "@/components/ui/StatItem/StatItem";
+import { FeatureCard } from "@/components/ui/FeatureCard/FeatureCard";
 
 export default function About() {
-
     return (
-
-        <section className="py-24">
+        <section className="bg-background py-24">
 
             <div className="mx-auto max-w-7xl px-6">
 
@@ -24,36 +20,39 @@ export default function About() {
                     {/* Texto */}
 
                     <motion.div
-
                         initial={{ opacity: 0, x: -40 }}
-
                         whileInView={{ opacity: 1, x: 0 }}
-
                         viewport={{ once: true }}
-
                         transition={{ duration: .6 }}
-
                     >
 
                         <SectionTitle
-
                             align="left"
-
-                            badge="Sobre la Feria"
-
-                            title="Tradición, cultura y desarrollo para toda la comunidad."
-
-                            subtitle="La Expo Feria Cultural Andrade Marín reúne en un mismo espacio la riqueza gastronómica, artesanal, turística y cultural del cantón, impulsando el talento local y fortaleciendo la identidad de sus comunidades."
-
+                            badge="Sobre la Expo Feria"
+                            title="Tradición que impulsa nuestra identidad."
                         />
 
-                        <div className="mt-8">
+                        <SectionDivider />
 
-                            <Button>
+                        <p className="mt-8 text-lg leading-8 text-muted">
 
-                                Conoce más
+                            La Expo Feria Cultural Andrade Marín reúne la riqueza
+                            cultural, gastronómica, artesanal y turística del
+                            cantón en un espacio que fortalece el desarrollo
+                            local y promueve el talento de su gente.
 
-                            </Button>
+                        </p>
+
+                        <div className="mt-12 grid grid-cols-3 gap-8">
+
+                            {aboutStats.map((item) => (
+
+                                <StatItem
+                                    key={item.label}
+                                    {...item}
+                                />
+
+                            ))}
 
                         </div>
 
@@ -62,36 +61,21 @@ export default function About() {
                     {/* Imagen */}
 
                     <motion.div
-
                         initial={{ opacity: 0, x: 40 }}
-
                         whileInView={{ opacity: 1, x: 0 }}
-
                         viewport={{ once: true }}
-
                         transition={{ duration: .6 }}
-
                     >
 
-                        <div
-                            className="
-                                overflow-hidden
-                                rounded-3xl
-                                shadow-xl
-                            "
-                        >
+                        <div className="overflow-hidden rounded-3xl shadow-xl">
 
                             <Image
-
                                 src="/expo-feria-cultural/images/about.png"
-
                                 alt="Expo Feria Cultural"
-
-                                width={700}
-
+                                width={7000}
                                 height={700}
-
-                                className=" h-full w-full object-cover transition-transform duration-500 hover:scale-105 " />
+                                className="h-[400px] w-full object-cover transition duration-700 hover:scale-105"
+                            />
 
                         </div>
 
@@ -101,51 +85,31 @@ export default function About() {
 
                 {/* Cards */}
 
-                <div
-                    className=" mt-24 grid gap-8 md:grid-cols-2 lg:grid-cols-3 "         >
+                <div className="mt-24 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
 
-                    {
+                    {aboutFeatures.map((feature, index) => (
 
-                        aboutFeatures.map((feature, index) => (
+                        <motion.div
+                            key={feature.title}
+                            initial={{ opacity: 0, y: 40 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{
+                                delay: index * .15,
+                                duration: .5,
+                            }}
+                        >
 
-                            <motion.div
+                            <FeatureCard {...feature} />
 
-                                key={feature.title}
+                        </motion.div>
 
-                                initial={{ opacity: 0, y: 40 }}
-
-                                whileInView={{ opacity: 1, y: 0 }}
-
-                                viewport={{ once: true }}
-
-                                transition={{
-
-                                    delay: index * .15,
-
-                                    duration: .5,
-
-                                }}
-
-                            >
-
-                                <AboutCard
-
-                                    {...feature}
-
-                                />
-
-                            </motion.div>
-
-                        ))
-
-                    }
+                    ))}
 
                 </div>
 
             </div>
 
         </section>
-
     );
-
 }

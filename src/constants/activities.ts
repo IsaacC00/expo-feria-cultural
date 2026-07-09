@@ -1,28 +1,53 @@
-import { Activity } from "@/types/activity";
+import {
+    Landmark,
+    Music,
+    Utensils,
+    Palette,
+    Trees,
+    Tractor,
+} from "lucide-react";
 
-export const activities: Activity[] = [
+export const activities = [
     {
-        title: "Artesanías",
+        title: "Cultura",
         description:
-            "Conoce el talento de artesanos locales mediante piezas únicas elaboradas con técnicas tradicionales.",
-        image: "/expo-feria-cultural/images/activities-artesania.png",
-    },
-    {
-        title: "Gastronomía",
-        description:
-            "Disfruta de una variedad de platos típicos y sabores que representan la riqueza culinaria de nuestra región.",
-        image: "/expo-feria-cultural/images/activities-food.png",
+            "Presentaciones artísticas y manifestaciones culturales.",
+        image: "/expo-feria-cultural/images/cultura.png",
+        icon: Landmark,
     },
     {
         title: "Música",
         description:
-            "Presentaciones en vivo con artistas y agrupaciones que llenarán la feria de ritmo y tradición.",
-        image: "/expo-feria-cultural/images/activities-music.png",
+            "Artistas locales y espectáculos musicales durante los tres días.",
+        image: "/expo-feria-cultural/images/musica.png",
+        icon: Music,
     },
     {
-        title: "Danza",
+        title: "Gastronomía",
         description:
-            "Espectáculos culturales que mantienen vivas las costumbres y expresiones artísticas de nuestra comunidad.",
-        image: "/expo-feria-cultural/images/activities-dance.png",
+            "Los sabores tradicionales de Andrade Marín.",
+        image: "/expo-feria-cultural/images/gastronomia.png",
+        icon: Utensils,
+    },
+    {
+        title: "Artesanía",
+        description:
+            "Productos elaborados por artesanos locales.",
+        image: "/expo-feria-cultural/images/artesania.png",
+        icon: Palette,
+    },
+    {
+        title: "Turismo",
+        description:
+            "Descubre los atractivos turísticos del cantón.",
+        image: "/expo-feria-cultural/images/turismo.png",
+        icon: Trees,
+    },
+    {
+        title: "Agricultura",
+        description:
+            "Exposición de productores y emprendimientos agrícolas.",
+        image: "/expo-feria-cultural/images/agricultura.png",
+        icon: Tractor,
     },
 ];

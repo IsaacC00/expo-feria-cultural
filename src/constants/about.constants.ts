@@ -1,7 +1,7 @@
 import {
     Landmark,
-    Utensils,
     Palette,
+    Utensils,
 } from "lucide-react";
 
 export const aboutFeatures = [
@@ -9,20 +9,33 @@ export const aboutFeatures = [
         icon: Landmark,
         title: "Cultura Viva",
         description:
-            "Presentaciones artísticas, música y tradiciones que representan la identidad del cantón.",
+            "Presentaciones artísticas, música y tradiciones que fortalecen la identidad del cantón.",
     },
-
     {
         icon: Palette,
         title: "Artesanía Local",
         description:
-            "Conoce el talento de artesanos que conservan técnicas transmitidas por generaciones.",
+            "Espacios dedicados al talento y creatividad de los artesanos de la región.",
     },
-
     {
         icon: Utensils,
         title: "Gastronomía",
         description:
-            "Saborea platos tradicionales preparados por productores y emprendedores locales.",
+            "Platos tradicionales preparados por emprendedores y productores locales.",
+    },
+];
+
+export const aboutStats = [
+    {
+        value: "25+",
+        label: "Años de tradición",
+    },
+    {
+        value: "150+",
+        label: "Expositores",
+    },
+    {
+        value: "3",
+        label: "Días de actividades",
     },
 ];

@@ -16,16 +16,15 @@ export function Hero() {
 
             id="inicio"
 
-            className=" relative min-h-screen flex items-center overflow-hidden "
-
-        >
+            className=" relative min-h-screen flex items-center overflow-hidden ">
 
 
             {/* Imagen */}
 
             <Image
 
-                src="/expo-feria-cultural/images/hero.png"
+                // src="/expo-feria-cultural/images/hero.png"
+                src="images/hero.png"
                 alt="Expo Feria Cultural Andrade Marín"
                 fill
                 priority
