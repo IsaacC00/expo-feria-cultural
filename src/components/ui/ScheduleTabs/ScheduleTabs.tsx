@@ -2,8 +2,9 @@
 
 import { motion } from "framer-motion";
 import clsx from "clsx";
-import { ScheduleTabsProps } from "./cheduleTabs.types";
+
 import { Button } from "../Button/Button";
+import { ScheduleTabsProps } from "./ScheduleTabs.types";
 
 
 

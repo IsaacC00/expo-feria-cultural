@@ -1,62 +1,70 @@
-"use client";
+import {
+    Landmark,
+    Music,
+    Utensils,
+    Palette,
+} from "lucide-react";
 
-import { motion } from "framer-motion";
-import { Clock3 } from "lucide-react";
+import { TimelineEventProps } from "./TimelineEvent/TimelineEvent.types";
 
-interface TimelineItemProps {
-    time: string;
-    title: string;
-    description: string;
-    index: number;
-}
 
-export default function TimelineItem({
+const iconMap = {
+    culture: Landmark,
+    music: Music,
+    gastronomy: Utensils,
+    craft: Palette,
+};
+
+
+export default function TimelineEvent({
     time,
     title,
     description,
-    index,
-}: TimelineItemProps) {
-    return (
-        <motion.div
-            initial={{
-                opacity: 0,
-                x: index % 2 === 0 ? -40 : 40,
-            }}
-            whileInView={{
-                opacity: 1,
-                x: 0,
-            }}
-            viewport={{ once: true }}
-            transition={{
-                duration: 0.6,
-                delay: index * 0.15,
-            }}
-            className="relative pl-12"
-        >
-            {/* Línea */}
-            <div className="absolute left-4 top-0 h-full w-[2px] bg-secondary/30" />
+    category,
+    type,
+}: TimelineEventProps) {
 
-            {/* Punto */}
-            <div className="absolute left-0 top-2 flex h-8 w-8 items-center justify-center rounded-full bg-primary shadow-lg">
-                <Clock3
-                    size={16}
-                    className="text-white"
-                />
+    const Icon = iconMap[type];
+
+
+    return (
+        <div className="relative flex gap-6">
+
+            <div className="flex flex-col items-center">
+
+                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary text-white">
+                    <Icon size={22} />
+                </div>
+
+                <div className="h-full w-px bg-gray-200" />
+
             </div>
 
-            <div className="rounded-3xl bg-white p-8 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-                <span className="text-sm font-semibold uppercase tracking-widest text-secondary">
+
+            <div className="pb-12">
+
+                <span className="text-sm text-secondary">
                     {time}
                 </span>
 
-                <h3 className="mt-2 text-2xl font-semibold text-primary">
+
+                <h3 className="mt-2 font-poppins text-xl font-semibold text-text">
                     {title}
                 </h3>
 
-                <p className="mt-4 leading-7 text-muted">
+
+                <p className="mt-2 text-text-secondary">
                     {description}
                 </p>
+
+
+                <span className="mt-4 inline-block rounded-full bg-secondary/10 px-4 py-1 text-sm">
+                    {category}
+                </span>
+
+
             </div>
-        </motion.div>
+
+        </div>
     );
 }

@@ -25,16 +25,11 @@ export function Hero() {
 
             <Image
 
-                src="/images/hero.jpg"
-
+                src="/images/hero.png"
                 alt="Expo Feria Cultural Andrade Marín"
-
                 fill
-
                 priority
-
                 className=" object-cover "
-
             />
 
 

@@ -1,190 +1,151 @@
 "use client";
 
-import Image from "next/image";
 import { motion } from "framer-motion";
-import {
 
-    type LucideIcon,
-} from "lucide-react";
-import { Section } from "@/components/ui/Section/Section";
-import { Container } from "@/components/ui/Container/Container";
+import Image from "next/image";
+
 import { SectionTitle } from "@/components/ui/SectionTitle/SectionTitle";
-import { Card } from "@/components/ui/Card/Card";
+
+import { Button } from "@/components/ui/Button/Button";
+
+import AboutCard from "./AboutCard";
 import { aboutFeatures } from "@/constants/about";
 
-interface Feature {
-    title: string;
-    description: string;
-    icon: LucideIcon;
-}
-
-
-const features = aboutFeatures;
-
-
 export default function About() {
+
     return (
-        <Section id="sobre">
-            <Container>
 
-                <SectionTitle
-                    badge="Nuestra esencia"
-                    title="Una celebración de cultura y tradición"
-                    subtitle="La Expo Feria Cultural Andrade Marín reúne gastronomía, música, artesanía y comunidad en una experiencia llena de identidad."
-                />
+        <section className="py-24">
 
+            <div className="mx-auto max-w-7xl px-6">
 
-                <div className="mt-16 grid grid-cols-1 gap-12 lg:grid-cols-2 items-center">
-
-
-                    {/* Imagen */}
-                    <motion.div
-                        initial={{
-                            opacity: 0,
-                            x: -40,
-                        }}
-                        whileInView={{
-                            opacity: 1,
-                            x: 0,
-                        }}
-                        viewport={{
-                            once: true,
-                        }}
-                        transition={{
-                            duration: 0.6,
-                        }}
-                        className="relative h-[450px] overflow-hidden rounded-3xl"
-                    >
-
-                        <Image
-                            src="/images/about-feria.jpg"
-                            alt="Cultura y tradición de Andrade Marín"
-                            fill
-                            className="object-cover"
-                        />
-
-                    </motion.div>
-
-
+                <div className="grid items-center gap-20 lg:grid-cols-2">
 
                     {/* Texto */}
+
                     <motion.div
-                        initial={{
-                            opacity: 0,
-                            x: 40,
-                        }}
-                        whileInView={{
-                            opacity: 1,
-                            x: 0,
-                        }}
-                        viewport={{
-                            once: true,
-                        }}
-                        transition={{
-                            duration: 0.6,
-                        }}
-                        className="space-y-6"
+
+                        initial={{ opacity: 0, x: -40 }}
+
+                        whileInView={{ opacity: 1, x: 0 }}
+
+                        viewport={{ once: true }}
+
+                        transition={{ duration: .6 }}
+
                     >
 
-                        <h3 className="text-3xl font-semibold text-primary">
-                            Tradición que conecta generaciones
-                        </h3>
+                        <SectionTitle
 
+                            align="left"
 
-                        <p className="text-lg leading-relaxed text-muted">
-                            La Expo Feria Cultural Andrade Marín nace como un punto de
-                            encuentro para celebrar nuestra identidad, destacando el talento
-                            de artesanos, emprendedores, artistas y productores locales.
-                        </p>
+                            badge="Sobre la Feria"
 
+                            title="Tradición, cultura y desarrollo para toda la comunidad."
 
-                        <p className="text-lg leading-relaxed text-muted">
-                            Un lugar donde la cultura, la gastronomía y las tradiciones se
-                            unen para crear una experiencia única para visitantes y familias.
-                        </p>
+                            subtitle="La Expo Feria Cultural Andrade Marín reúne en un mismo espacio la riqueza gastronómica, artesanal, turística y cultural del cantón, impulsando el talento local y fortaleciendo la identidad de sus comunidades."
 
+                        />
+
+                        <div className="mt-8">
+
+                            <Button>
+
+                                Conoce más
+
+                            </Button>
+
+                        </div>
 
                     </motion.div>
 
+                    {/* Imagen */}
+
+                    <motion.div
+
+                        initial={{ opacity: 0, x: 40 }}
+
+                        whileInView={{ opacity: 1, x: 0 }}
+
+                        viewport={{ once: true }}
+
+                        transition={{ duration: .6 }}
+
+                    >
+
+                        <div
+                            className="
+                                overflow-hidden
+                                rounded-3xl
+                                shadow-xl
+                            "
+                        >
+
+                            <Image
+
+                                src="/images/about.png"
+
+                                alt="Expo Feria Cultural"
+
+                                width={700}
+
+                                height={700}
+
+                                className=" h-full w-full object-cover transition-transform duration-500 hover:scale-105 " />
+
+                        </div>
+
+                    </motion.div>
 
                 </div>
 
+                {/* Cards */}
 
+                <div
+                    className=" mt-24 grid gap-8 md:grid-cols-2 lg:grid-cols-3 "         >
 
+                    {
 
-                {/* Cards culturales */}
-
-                <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-3">
-
-
-                    {features.map((item, index) => {
-
-                        const Icon = item.icon;
-
-
-                        return (
+                        aboutFeatures.map((feature, index) => (
 
                             <motion.div
-                                key={item.title}
-                                initial={{
-                                    opacity: 0,
-                                    y: 30,
-                                }}
-                                whileInView={{
-                                    opacity: 1,
-                                    y: 0,
-                                }}
-                                viewport={{
-                                    once: true,
-                                }}
+
+                                key={feature.title}
+
+                                initial={{ opacity: 0, y: 40 }}
+
+                                whileInView={{ opacity: 1, y: 0 }}
+
+                                viewport={{ once: true }}
+
                                 transition={{
-                                    duration: 0.5,
-                                    delay: index * 0.15,
+
+                                    delay: index * .15,
+
+                                    duration: .5,
+
                                 }}
+
                             >
 
-                                <Card>
+                                <AboutCard
 
-                                    <div className="flex flex-col items-center text-center gap-5 h-52">
+                                    {...feature}
 
-
-                                        <div className="flex h-14 w-14 items-center justify-center rounded-full bg-secondary/20">
-
-                                            <Icon
-                                                size={28}
-                                                className="text-secondary"
-                                            />
-
-                                        </div>
-
-
-                                        <h4 className="text-xl font-semibold text-primary">
-                                            {item.title}
-                                        </h4>
-
-
-                                        <p className="text-muted leading-relaxed">
-                                            {item.description}
-                                        </p>
-
-
-                                    </div>
-
-
-                                </Card>
-
+                                />
 
                             </motion.div>
 
-                        );
+                        ))
 
-                    })}
-
+                    }
 
                 </div>
 
+            </div>
 
-            </Container>
-        </Section>
+        </section>
+
     );
+
 }
