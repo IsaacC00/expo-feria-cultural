@@ -41,7 +41,7 @@ export default function Gastronomy() {
                         <div className="overflow-hidden rounded-3xl shadow-xl">
 
                             <Image
-                                src="/images/gastronomy/hero.png"
+                                src="/expo-feria-cultural/images/gastronomy/hero.png"
                                 alt="Gastronomía"
                                 width={700}
                                 height={900}
