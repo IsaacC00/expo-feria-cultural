@@ -30,7 +30,7 @@ export const homeNavigation = [
 export const exhibitorsNavigation = [
     {
         name: "Inicio",
-        href: "/",
+        href: "/expo-feria-cultural/",
     },
     {
         name: "Beneficios",
