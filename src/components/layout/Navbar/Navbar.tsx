@@ -133,7 +133,7 @@ export function Navbar() {
 
                         <Button>
 
-                            <a href="/exhibitors">
+                            <a href="/expo-feria-cultural/exhibitors">
                                 Reservar Stand
                             </a>
 
