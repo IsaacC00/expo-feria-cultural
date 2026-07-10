@@ -7,8 +7,8 @@ import type {
 export type ButtonVariant =
     | "primary"
     | "secondary"
-    | "outline";
-
+    | "outline"
+    | "outline-light";
 
 export interface ButtonProps
     extends ButtonHTMLAttributes<HTMLButtonElement> {

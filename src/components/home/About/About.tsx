@@ -11,7 +11,7 @@ import { FeatureCard } from "@/components/ui/FeatureCard/FeatureCard";
 
 export default function About() {
     return (
-        <section className="bg-background py-24">
+        <section id="feria" className="bg-background py-24">
 
             <div className="mx-auto max-w-7xl px-6">
 

@@ -8,7 +8,7 @@ import { gastronomy } from "./gastronomy.constants";
 
 export default function Gastronomy() {
     return (
-        <section className="bg-background py-24 overflow-x-hidden">
+        <section id="gastronomia" className="bg-background py-24 overflow-x-hidden">
 
             <div className="mx-auto max-w-7xl px-6">
 

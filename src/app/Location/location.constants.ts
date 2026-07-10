@@ -6,10 +6,10 @@ export const location = {
     schedule: "08:00 - 20:00",
 
     coordinates: {
-        lat: 0.0423,
-        lng: -78.1452,
+        lat: 0.3220,
+        lng: -78.2129,
     },
 
     googleMaps:
-        "https://maps.google.com/?q=0.0423,-78.1452",
+        "https://maps.google.com/?q=0.3220,-78.2129",
 };

@@ -11,12 +11,23 @@ import {
 } from "lucide-react";
 import { Container } from "@/components/ui/Container/Container";
 import { Button } from "@/components/ui/Button/Button";
-import { navigation } from "@/constants/navigation";
 import { Logo } from "../Logo/Logo";
+import { usePathname } from "next/navigation";
+
+import {
+    homeNavigation,
+    exhibitorsNavigation,
+} from "@/constants/navigation";
 
 
 export function Navbar() {
 
+    const pathname = usePathname();
+
+    const isExhibitors = pathname.startsWith("/exhibitors");
+    const currentNavigation = isExhibitors
+        ? exhibitorsNavigation
+        : homeNavigation;
 
     const [scrolled, setScrolled] = useState(false);
 
@@ -101,44 +112,30 @@ export function Navbar() {
 
 
                         {
-                            navigation.map((item) => (
-
-
+                            currentNavigation.map((item) => (
                                 <a
-
                                     key={item.name}
-
                                     href={item.href}
-
-                                    className={clsx("text-sm", "font-medium", "transition-colors", scrolled
-
-                                        ?
-                                        "text-foreground"
-
-                                        :
-                                        "text-white",
-
-
+                                    className={clsx(
+                                        "text-sm font-medium transition-colors",
+                                        scrolled
+                                            ? "text-foreground"
+                                            : "text-white",
                                         "hover:text-primary"
-
                                     )}
-
                                 >
-
                                     {item.name}
-
                                 </a>
-
-
                             ))
-
                         }
 
 
 
                         <Button>
 
-                            Visitar Feria
+                            <a href="/exhibitors">
+                                Reservar Stand
+                            </a>
 
                         </Button>
 
@@ -210,36 +207,29 @@ export function Navbar() {
 
 
                                 {
-                                    navigation.map((item) => (
-
-
+                                    currentNavigation.map((item) => (
                                         <a
-
                                             key={item.name}
-
                                             href={item.href}
-
-                                            onClick={() => setOpen(false)}
-
-                                            className=" text-foreground font-medium "
-
+                                            className={clsx(
+                                                "text-sm font-medium transition-colors",
+                                                scrolled
+                                                    ? "text-foreground"
+                                                    : "text-white",
+                                                "hover:text-primary"
+                                            )}
                                         >
-
                                             {item.name}
-
                                         </a>
-
-
                                     ))
-
                                 }
 
 
 
                                 <Button>
-
-                                    Visitar Feria
-
+                                    <a href="/exhibitors">
+                                        Reservar Stand
+                                    </a>
                                 </Button>
 
 

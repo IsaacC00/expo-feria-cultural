@@ -9,7 +9,7 @@ import { SectionTitle } from "@/components/ui/SectionTitle/SectionTitle";
 
 export default function Gallery() {
     return (
-        <section className="bg-background py-24">
+        <section id="galeria" className="bg-background py-24">
 
             <div className="mx-auto max-w-7xl px-6">
 

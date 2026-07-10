@@ -7,7 +7,7 @@ import { activities } from "@/constants/activities";
 
 export default function Activities() {
     return (
-        <section className="py-24">
+        <section id="actividades" className="py-24">
 
             <div className="mx-auto max-w-7xl px-6">
 

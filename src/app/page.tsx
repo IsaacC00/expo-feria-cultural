@@ -5,7 +5,6 @@ import Gastronomy from "@/components/home/Gastronomy/Gastronomy";
 import { Hero } from "@/components/home/Hero/Hero";
 import Schedule from "@/components/home/Schedule/Schedule";
 import Sponsors from "@/components/home/Sponsors/Sponsors";
-import { Navbar } from "@/components/layout/Navbar/Navbar";
 import Location from "./Location/Location";
 import Footer from "@/components/home/Footer/Footer";
 
@@ -16,7 +15,6 @@ export default function Home() {
 
 
       <main className="bg-background">
-        <Navbar />
         {/* Hero temporal */}
         <Hero />
         <About />
@@ -29,7 +27,6 @@ export default function Home() {
         <Gastronomy />
         <Sponsors />
         <Location />
-        <Footer />
       </main>
     </>
 
