@@ -34,19 +34,19 @@ export const exhibitorsNavigation = [
     },
     {
         name: "Beneficios",
-        href: "/exhibitors#beneficios",
+        href: "/expo-feria-cultural/exhibitors#beneficios",
     },
     {
         name: "Stands",
-        href: "/exhibitors#stands",
+        href: "/expo-feria-cultural/exhibitors#stands",
     },
     {
         name: "Proceso",
-        href: "/exhibitors#proceso",
+        href: "/expo-feria-cultural/exhibitors#proceso",
     },
     {
         name: "FAQ",
-        href: "/exhibitors#faq",
+        href: "/expo-feria-cultural/exhibitors#faq",
     },
     {
         name: "Contacto",
