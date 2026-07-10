@@ -70,7 +70,8 @@ export default function About() {
                         <div className="overflow-hidden rounded-3xl shadow-xl">
 
                             <Image
-                                src="/expo-feria-cultural/images/about.png"
+                                // src="/expo-feria-cultural/images/about.png"
+                                src="/images/about.png"
                                 alt="Expo Feria Cultural"
                                 width={7000}
                                 height={700}

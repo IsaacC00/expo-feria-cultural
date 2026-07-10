@@ -58,7 +58,7 @@ export default function RootLayout({
 
       lang="es"
 
-      className={` ${inter.variable} ${poppins.variable} `} >
+      className={` ${inter.variable} ${poppins.variable} overflow-x-hidden`} >
 
       <body>
 
