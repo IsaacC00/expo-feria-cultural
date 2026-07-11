@@ -13,6 +13,8 @@ import { Container } from "@/components/ui/Container/Container";
 import { Button } from "@/components/ui/Button/Button";
 import { Logo } from "../Logo/Logo";
 import { usePathname } from "next/navigation";
+import { useRouter } from "next/navigation";
+
 
 import {
     homeNavigation,
@@ -22,6 +24,7 @@ import {
 
 export function Navbar() {
 
+    const router = useRouter();
     const pathname = usePathname();
 
     const isExhibitors = pathname.startsWith("/exhibitors");
@@ -131,11 +134,15 @@ export function Navbar() {
 
 
 
-                        <Button>
+                        <Button
+                            onClick={() => {
 
-                            <a href="/expo-feria-cultural/exhibitors">
-                                Reservar Stand
-                            </a>
+                                router.push("/expo-feria-cultural/exhibitors");
+
+                            }}
+                        >
+
+                            Reservar Stand
 
                         </Button>
 
@@ -191,7 +198,13 @@ export function Navbar() {
 
                     <div
 
-                        className=" md:hidden bg-white shadow-lg "
+                        className={clsx(
+                            "md:hidden transition-all duration-300",
+
+                            scrolled
+                                ? "bg-white/10 backdrop-blur-xl shadow-lg"
+                                : "bg-black/10 backdrop-blur-xl"
+                        )}
 
                     >
 
@@ -226,10 +239,16 @@ export function Navbar() {
 
 
 
-                                <Button>
-                                    <a href="/expo-feria-cultural/exhibitors">
-                                        Reservar Stand
-                                    </a>
+                                <Button
+                                    onClick={() => {
+
+                                        router.push("/expo-feria-cultural/exhibitors");
+
+                                    }}
+                                >
+
+                                    Reservar Stand
+
                                 </Button>
 
 
