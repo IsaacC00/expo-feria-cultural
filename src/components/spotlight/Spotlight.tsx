@@ -108,8 +108,15 @@ export function Spotlight({
                             priority
 
                             className="
-                                    h-[80vh]
-                                     w-auto
+                                w-[90vw]
+                                max-w-sm
+
+                                md:w-auto
+                                md:max-h-[80vh]
+
+                                h-auto
+                                object-contain
+
                                 rounded-[32px]
                                 shadow-[0_40px_120px_rgba(0,0,0,.45)]
                                 select-none

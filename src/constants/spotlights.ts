@@ -4,6 +4,7 @@ export const spotlights = {
 
     home: {
 
+
         image: "/expo-feria-cultural/images/spotlights/home.jpeg",
 
         alt: "Expo Feria Cultural",
@@ -11,6 +12,7 @@ export const spotlights = {
     },
 
     exhibitors: {
+
 
         image: "/expo-feria-cultural/images/spotlights/exhibitors.jpeg",
 
