@@ -137,7 +137,7 @@ export function Navbar() {
                         <Button
                             onClick={() => {
 
-                                router.push("/expo-feria-cultural/exhibitors");
+                                router.push("/exhibitors");
 
                             }}
                         >
@@ -242,7 +242,7 @@ export function Navbar() {
                                 <Button
                                     onClick={() => {
 
-                                        router.push("/expo-feria-cultural/exhibitors");
+                                        router.push("/exhibitors");
 
                                     }}
                                 >
